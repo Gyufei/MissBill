@@ -18,6 +18,10 @@ $link-hover-color: #333;
     &:hover {
       color: $link-hover-color;
     }
+
+    &:focus {
+      text-decoration: none;
+    }
   }
 }
 

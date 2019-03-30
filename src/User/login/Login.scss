@@ -1,0 +1,27 @@
+.ant-input,
+.ant-input-affix-wrapper {
+  max-width: 260px;
+}
+
+.ant-form-item-label {
+  line-height: 20px;
+}
+
+.remeber-checkbox {
+  margin-bottom: 2px;
+
+  .ant-form-item-control {
+    line-height: 30px;
+  }
+}
+
+.forget-password-link {
+  margin-left: 6px;
+  padding: 0 3px;
+  
+  font-size: 13px;
+  &:hover {
+    color: #fff;
+    background-color: #1890ff;
+  }
+}

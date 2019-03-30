@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import './App.scss'
 
-import HeaderBar from './headerbar/HeaderBar'
-import Login from './login/Login'
+import HeaderBar from './Common/headerbar/HeaderBar'
+import User from './User/User'
 
 class App extends Component {
   render () {
@@ -11,8 +11,8 @@ class App extends Component {
       <Router>
         <div className="App">
           <HeaderBar></HeaderBar>
-          <Route path='/login' component={ Login }></Route>
-          <Route path="/" component={ Login }></Route>
+          <User></User>
+          <Route path="/"></Route>
         </div>
       </Router>
     )

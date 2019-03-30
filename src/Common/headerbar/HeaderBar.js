@@ -21,7 +21,7 @@ const HeaderBar = () => {
         </div>
         <div className="system-link">
           <Link to='/login'>登录</Link>
-          <Link to='/login'>注册</Link>
+          <Link to='/register'>注册</Link>
         </div>
       </div>
     </nav>
