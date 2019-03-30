@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
-import './App.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import './App.scss'
+
+import HeaderBar from './headerbar/HeaderBar'
+import Login from './login/Login'
 
 class App extends Component {
   render () {
     return (
-      <div className="App">
-      </div>
+      <Router>
+        <div className="App">
+          <HeaderBar></HeaderBar>
+          <Route path='/login' component={ Login }></Route>
+          <Route path="/" component={ Login }></Route>
+        </div>
+      </Router>
     )
   }
 }
