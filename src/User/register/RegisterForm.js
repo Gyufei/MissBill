@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { PropTypes } from 'prop-types'
 
-import { Form, Input, Button } from 'antd'
+import { Form, Input, Button, Icon } from 'antd'
 
 import './Register.scss'
 
@@ -53,7 +53,9 @@ class RegisterForm extends Component {
             getFieldDecorator('username', {
               rules: [{ required: true, message: '请填写用户名'}]
             })(
-              <Input placeholder="Username" />
+              <Input 
+                prefix={ <Icon type="user"></Icon> }
+                placeholder="Username" />
             )
           }
         </Form.Item>
@@ -65,7 +67,9 @@ class RegisterForm extends Component {
                 { type: 'email', message: '请输入正确的邮箱格式'}
               ]
             })(
-              <Input placeholder="Email" />
+              <Input 
+                prefix={ <Icon type="mail"></Icon> }
+                placeholder="Email" />
             )
           }
         </Form.Item>
@@ -79,6 +83,7 @@ class RegisterForm extends Component {
               ]
             })(
               <Input.Password
+                prefix={ <Icon type="lock"></Icon> }
                 visibilityToggle={ false }
                 placeholder="Password"/>
             )
@@ -93,6 +98,7 @@ class RegisterForm extends Component {
               ]
             })(
               <Input.Password
+                prefix={ <Icon type="lock"></Icon> }
                 visibilityToggle={ false }
                 placeholder="Confirm Password"/>
             )

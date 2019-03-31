@@ -4,6 +4,7 @@ import './App.scss'
 
 import HeaderBar from './Common/headerbar/HeaderBar'
 import User from './User/User'
+import Main from './Main/Main'
 
 class App extends Component {
   render () {
@@ -12,6 +13,7 @@ class App extends Component {
         <div className="App">
           <HeaderBar></HeaderBar>
           <User></User>
+          <Main></Main>
           <Route path="/"></Route>
         </div>
       </Router>

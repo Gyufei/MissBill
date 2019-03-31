@@ -1,11 +1,4 @@
-.ant-input,
-.ant-input-affix-wrapper {
-  max-width: 260px;
-}
-
-.ant-form-item-label {
-  line-height: 20px;
-}
+@import '../Form.scss';
 
 .remeber-checkbox {
   margin-bottom: 2px;

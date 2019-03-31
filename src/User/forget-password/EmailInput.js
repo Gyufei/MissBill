@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Input, Typography } from 'antd'
+import { isEmail } from '../../utils/utils'
 import './ForgetPassword.scss'
 
 const { Text } = Typography
@@ -49,7 +50,7 @@ class EmailInput extends Component {
     if (!email) {
       emailTipMessage = emailTipMessages.EMPTY
       changeIsCanSubmit(false)
-    } else if(!this.checkEmailFormat(email)) {
+    } else if(!isEmail(email)) {
       emailTipMessage = emailTipMessages.ERRORFORMAT
       changeIsCanSubmit(false)
     } else {
@@ -59,11 +60,6 @@ class EmailInput extends Component {
 
     changeEmail(email)
     this.setState({ emailTipMessage })
-  }
-
-  checkEmailFormat (email) {
-    const emailReg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
-    return emailReg.test(email)
   }
 
   render() {

@@ -15,7 +15,7 @@ const HeaderBar = () => {
 
       <div className="header-link-container">
         <div className="main-link">
-          <Link to='/'>我的账户</Link>
+          <Link to='/account'>我的账户</Link>
           <Link to='/'>收入和支出</Link>
           <Link to='/'>统计分析</Link>
         </div>
