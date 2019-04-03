@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BasicSummary from './basic-summary/BasicSummary'
+import AccountItem from './acount-item/AccountItem'
 
 
 class Account extends Component {
@@ -17,6 +18,7 @@ class Account extends Component {
           currentMonthIncome={ this.state.currentMonthIncome }
           currentMonthOutlay={ this.state.currentMonthOutlay }
         ></BasicSummary>
+        <AccountItem></AccountItem>
       </div>
     )
   }

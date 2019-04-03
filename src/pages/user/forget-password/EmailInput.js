@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Input, Typography } from 'antd'
-import { isEmail } from '../../utils/utils'
+import { isEmail } from '@/utils/utils'
 import './ForgetPassword.scss'
 
 const { Text } = Typography
