@@ -1,19 +1,14 @@
 /* global require, module, __dirname */
-const { override, fixBabelImports } = require('customize-cra')
+const { override, fixBabelImports, addWebpackAlias } = require('customize-cra')
 const path = require('path')
 
-override(
+module.exports = override(
   fixBabelImports('import', {
     libraryName: 'antd',
     libraryDirectory: 'es',
     style: 'css',
   }),
+  addWebpackAlias({
+    ['@']: path.resolve(__dirname, 'src')
+  })
 )
-
-module.exports = function override(config) {
-  config.resolve = {
-    ...config.resolve,
-    alias: { '@': path.resolve(__dirname, 'src') }
-  }
-  return config
-}

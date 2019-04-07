@@ -1,25 +1,26 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Statistic } from 'antd'
+import { formatPrecision } from '@/utils/utils'
 
 import './BasicSummary.scss'
 
-const BasicStatistic = (props) => {
-  const { title, value, color, ...resetProps } = props
+const SummaryItem = (props) => {
+  const { title, value } = props
 
-  return (<Statistic 
-    title={ title }
-    value={ value }
-    valueStyle={{ color: color}}
-    precision={2}
-    prefix="¥ "
-    { ...resetProps }
-  ></Statistic>)
+  return (
+    <div className="summary-item">
+      <span className="summary-item-title">
+        { title }
+      </span>
+      <span className="summary-item-value">
+        ¥ { formatPrecision(value, 2) }
+      </span>
+    </div>
+  )
 }
 
-BasicStatistic.propTypes = {
+SummaryItem.propTypes = {
   title: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired
 }
 
@@ -35,23 +36,20 @@ class BasicSummary extends Component {
     const { totalAssets, currentMonthIncome, currentMonthOutlay } = this.props
     return (
       <div className="total-assets-container">
-        <BasicStatistic 
+        <SummaryItem 
           title="总资产" 
-          value={ totalAssets }
-          color='#2c3e50'
-        ></BasicStatistic>
+          value={  totalAssets }
+        ></SummaryItem>
 
-        <BasicStatistic 
+        <SummaryItem 
           title="本月收入" 
           value={ currentMonthIncome }
-          color='#2c3e50'
-        ></BasicStatistic>
+        ></SummaryItem>
 
-        <BasicStatistic 
+        <SummaryItem 
           title="本月支出" 
           value={ currentMonthOutlay }
-          color='#2c3e50'
-        ></BasicStatistic>
+        ></SummaryItem>
       </div>
     )
   }

@@ -1,10 +1,27 @@
+@import '~@/assets/style/variable.scss';
+
 .total-assets-container {
   display: flex;
   justify-content: space-between;
 
-  width: 100%;
   padding: 20px;
 
   border: 1px solid #ddd;
   border-radius: 5px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+
+  .summary-item-value {
+    margin-left: 6px;
+    font-size: 20px;
+    color: $money-font-color;
+  }
+
+  .summary-item-title {
+    font-size: 14px;
+    color: $vice-title-font-color;
+  }
 }
