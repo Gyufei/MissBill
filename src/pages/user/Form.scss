@@ -1,8 +1,10 @@
-.ant-input,
-.ant-input-affix-wrapper {
-  max-width: 260px;
-}
+@mixin horizontal-form {
+  .ant-input,
+  .ant-input-affix-wrapper {
+    max-width: 260px;
+  }
 
-.ant-form-item-label {
-  line-height: 20px;
+  .ant-form-item-label {
+    line-height: 20px;
+  }
 }

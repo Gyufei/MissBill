@@ -26,6 +26,7 @@ class LoginForm extends Component {
     const { getFieldDecorator } = this.props.form
     return (
       <Form 
+        className="horizontal-form"
         hideRequiredMark={ true }
         onSubmit={ this.handleLoginFormSubmit } >
         <Form.Item label="用户名">

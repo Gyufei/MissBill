@@ -1,5 +1,9 @@
 @import '../Form.scss';
 
+.horizontal-form {
+  @include horizontal-form;
+}
+
 .remeber-checkbox {
   margin-bottom: 2px;
 

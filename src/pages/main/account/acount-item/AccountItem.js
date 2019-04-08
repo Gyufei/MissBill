@@ -9,7 +9,7 @@ import './AccountItem.scss'
 import cashImg from '@/assets/img/cash.jpeg'
 
 class AccountItem extends Component {
-  static propsTypes = {
+  static propTypes = {
     account: PropTypes.shape({
       cate: PropTypes.string,
       name: PropTypes.string,
@@ -22,7 +22,7 @@ class AccountItem extends Component {
   static defaultProps = {
     account: {
       cate: '现金账户',
-      name: '身上现金',
+      name: '现金',
       remark: '身上现金',
       balance: 2000,
       todayConsume: 1000
@@ -33,10 +33,12 @@ class AccountItem extends Component {
     visibleEditModal: false
   }
 
-  handleShowEditModal = () => {
-    this.setState({
-      visibleEditModal: true
-    })
+  handleEditModalStatus = (isOpen) => {
+    return () => {
+      this.setState({
+        visibleEditModal: isOpen
+      })
+    }
   }
 
   render() {
@@ -65,8 +67,12 @@ class AccountItem extends Component {
         </div>
 
         <div className="account-edit">
-          <Button onClick={ this.handleShowEditModal } size="small">编辑</Button>
-          <AccountEditModal visible={ this.state.visibleEditModal }></AccountEditModal>
+          <Button onClick={ this.handleEditModalStatus(true) } size="small">编辑</Button>
+          <AccountEditModal 
+            onCloseModal={ this.handleEditModalStatus(false) }
+            visible={ this.state.visibleEditModal }
+            account={ this.props.account }
+          ></AccountEditModal>
         </div>
 
         <div className="account-operator">

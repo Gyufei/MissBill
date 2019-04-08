@@ -47,6 +47,7 @@ class ResetPasswordForm extends Component {
 
     return (
       <Form 
+        className="horizontal-form"
         hideRequiredMark={ true }
         onSubmit={ this.handleSubmit }>
         <Form.Item label="邮箱">

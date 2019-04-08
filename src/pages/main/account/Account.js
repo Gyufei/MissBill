@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import BasicSummary from './basic-summary/BasicSummary'
 import AccountItem from './acount-item/AccountItem'
 
-
 class Account extends Component {
   state = {
     totalAssets: 2333,
