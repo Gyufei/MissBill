@@ -23,8 +23,7 @@ class AccountForm extends Component {
       },
     }
 
-    const { cate, name, remark, balance } = this.props.account
-    const { onChangeInput } = this.props
+    const { onChangeInput, account: { cate, name, remark, balance }} = this.props
 
     return (
       <Form {...formItemLayout}>

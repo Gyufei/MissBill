@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import { Modal } from 'antd'
 import AccountForm from '../account-form/AccountForm'
 
-
 class AccountEditModal extends Component {
   static propTypes = {
     account: PropTypes.shape({
+      id: PropTypes.number,
       cate: PropTypes.string,
       name: PropTypes.string,
       remark: PropTypes.string,
@@ -18,6 +18,7 @@ class AccountEditModal extends Component {
 
   static defaultProps = {
     account: {
+      id: '',
       cate: '',
       name: '',
       remark: '',
@@ -32,6 +33,9 @@ class AccountEditModal extends Component {
     }
   }
 
+  get isEdit() {
+    return !!this.props.account.id
+  }
 
   handleInputChange(inputCate, e) {
     const changeValue = inputCate !== 'balance' ? e.target.value : e
@@ -46,11 +50,9 @@ class AccountEditModal extends Component {
     const { visible, onCloseModal } = this.props
     const { account } = this.state
 
-    const isEdit = !!account.name
-
     return (
       <Modal 
-        title={ isEdit ? '修改账户' : '新建账户'}
+        title={ this.isEdit ? '修改账户' : '新建账户'}
         visible={ visible }
         onOk={ onCloseModal }
         onCancel={ onCloseModal }

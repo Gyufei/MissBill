@@ -11,22 +11,13 @@ import cashImg from '@/assets/img/cash.jpeg'
 class AccountItem extends Component {
   static propTypes = {
     account: PropTypes.shape({
+      id: PropTypes.number,
       cate: PropTypes.string,
       name: PropTypes.string,
       remark: PropTypes.string,
       balance: PropTypes.number,
       todayConsume: PropTypes.number
     })
-  }
-
-  static defaultProps = {
-    account: {
-      cate: '现金账户',
-      name: '现金',
-      remark: '身上现金',
-      balance: 2000,
-      todayConsume: 1000
-    }
   }
   
   state = {

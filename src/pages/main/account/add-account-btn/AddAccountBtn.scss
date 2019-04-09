@@ -1,0 +1,25 @@
+.add-account-btn {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background-color: #f1c40f;
+  font-size: 40px;
+
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    background-color: #f39c12;
+  }
+
+  .add-account-btn-text {
+    padding-bottom: 6px;
+    user-select:none;
+  }
+}
