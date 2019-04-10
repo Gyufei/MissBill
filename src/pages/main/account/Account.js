@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import BasicSummary from './basic-summary/BasicSummary'
 import AccountItem from './acount-item/AccountItem'
 import AddAccountBtn from './add-account-btn/AddAccountBtn'
+import AccountFormModal from './account-form-modal/AccountFormModal'
 import './Account.scss'
 
 class Account extends Component {
   state = {
+    showAddAccountModal: false,
     totalAssets: 2333,
     currentMonthIncome: 1000,
     currentMonthOutlay: 2000,
@@ -42,13 +44,18 @@ class Account extends Component {
     const addBtnContainer = document.querySelector('.add-account-btn-container')
     document.addEventListener('scroll', () => {
       const overflow = mainContainer.getBoundingClientRect().top
-      console.log(overflow)
       addBtnContainer.style.bottom = overflow - 39 + 'px'
     })
   }
 
+  handleAddModalStatus = (isShow) => () => {
+    this.setState({
+      showAddAccountModal: isShow
+    })
+  }
+
   render() {
-    const { accounts } = this.state
+    const { accounts, showAddAccountModal } = this.state
     return (
       <div className="main-container">
         <BasicSummary 
@@ -64,8 +71,12 @@ class Account extends Component {
           }
         </div>
         <div className="add-account-btn-container">
-          <AddAccountBtn></AddAccountBtn>
+          <AddAccountBtn onClick={ this.handleAddModalStatus(true) }></AddAccountBtn>
         </div>
+        <AccountFormModal 
+          showFormModal={ showAddAccountModal }
+          onCloseFormModal={ this.handleAddModalStatus(false) }
+        ></AccountFormModal>
       </div>
     )
   }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Modal } from 'antd'
-import AccountForm from '../account-form/AccountForm'
+import AccountForm from './account-form/AccountForm'
 
-class AccountEditModal extends Component {
+class AccountModal extends Component {
   static propTypes = {
     account: PropTypes.shape({
       id: PropTypes.number,
@@ -12,13 +12,13 @@ class AccountEditModal extends Component {
       remark: PropTypes.string,
       balance: PropTypes.number,
     }),
-    visible: PropTypes.bool,
-    onCloseModal: PropTypes.func.isRequired
+    showFormModal: PropTypes.bool,
+    onCloseFormModal: PropTypes.func.isRequired
   }
 
   static defaultProps = {
     account: {
-      id: '',
+      id: 0,
       cate: '',
       name: '',
       remark: '',
@@ -47,15 +47,15 @@ class AccountEditModal extends Component {
   }
 
   render() {
-    const { visible, onCloseModal } = this.props
+    const { showFormModal, onCloseFormModal } = this.props
     const { account } = this.state
 
     return (
       <Modal 
         title={ this.isEdit ? '修改账户' : '新建账户'}
-        visible={ visible }
-        onOk={ onCloseModal }
-        onCancel={ onCloseModal }
+        visible={ showFormModal }
+        onOk={ onCloseFormModal }
+        onCancel={ onCloseFormModal }
       >
         <AccountForm
           account={ account }
@@ -66,4 +66,4 @@ class AccountEditModal extends Component {
   }
 }
 
-export default AccountEditModal
+export default AccountModal

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import AccountEditModal from '../account-modal/AccountModal'
+import AccountFormModal from '../account-form-modal/AccountFormModal'
+import AccountFlowDrawer from '../account-flow-drawer/AccountFlowDrawer'
 import { Button } from 'antd'
 import { formatPrecision } from '@/utils/utils'
 
@@ -21,19 +22,27 @@ class AccountItem extends Component {
   }
   
   state = {
-    visibleEditModal: false
+    showFormModal: false,
+    showFlowDrawer: false
   }
 
-  handleEditModalStatus = (isOpen) => {
-    return () => {
-      this.setState({
-        visibleEditModal: isOpen
-      })
-    }
+  handleEditModalStatus = (isShow) => () => {
+    this.setState({
+      showFormModal: isShow
+    })
   }
+ 
+
+  handleFlowDrawerStatus = (isShow) => () => {
+    this.setState({
+      showFlowDrawer: isShow
+    })
+  }
+ 
 
   render() {
-    const { cate, name, balance, todayConsume } = this.props.account
+    const { showFormModal, showFlowDrawer } = this.state
+    const { cate, name, balance, remark, todayConsume } = this.props.account
 
     return (
       <div className="account-item">
@@ -45,7 +54,10 @@ class AccountItem extends Component {
         <div className="account-info">
           <div className="info-item">
             <span className="info-title">账户名称</span>
-            <span className="info-title-value">{ name }</span>
+            <span className="info-title-value">
+              { name }
+              { remark ? <span className="info-remark">({ remark })</span> : null}
+            </span>
           </div>
           <div className="info-item">
             <span className="info-title">账户余额</span>
@@ -59,17 +71,24 @@ class AccountItem extends Component {
 
         <div className="account-edit">
           <Button onClick={ this.handleEditModalStatus(true) } size="small">编辑</Button>
-          <AccountEditModal 
-            onCloseModal={ this.handleEditModalStatus(false) }
-            visible={ this.state.visibleEditModal }
-            account={ this.props.account }
-          ></AccountEditModal>
         </div>
 
         <div className="account-operator">
-          <Button size="small">流水</Button>
+          <Button onClick={ this.handleFlowDrawerStatus(true) } size="small">流水</Button>
           <Button size="small">转账</Button>
         </div>
+
+        <AccountFormModal 
+          onCloseFormModal={ this.handleEditModalStatus(false) }
+          showFormModal={ showFormModal }
+          account={ this.props.account }>
+        </AccountFormModal>
+
+        <AccountFlowDrawer
+          onCloseFlowDrawer={ this.handleFlowDrawerStatus(false) }
+          showFlowDrawer={ showFlowDrawer }
+          account={ this.props.account }>
+        </AccountFlowDrawer>
       </div>
     )
   }
