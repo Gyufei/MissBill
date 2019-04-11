@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Modal } from 'antd'
-import AccountForm from './account-form/AccountForm'
+import AccountForm from './AccountForm'
 
 class AccountModal extends Component {
   static propTypes = {

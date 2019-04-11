@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import AccountFormModal from '../account-form-modal/AccountFormModal'
-import AccountFlowDrawer from '../account-flow-drawer/AccountFlowDrawer'
+import AccountFormModal from '../account-form/AccountFormModal'
+import AccountFlowDrawer from '../account-flow/AccountFlowDrawer'
 import { Button } from 'antd'
 import { formatPrecision } from '@/utils/utils'
 

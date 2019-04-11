@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BasicSummary from './basic-summary/BasicSummary'
 import AccountItem from './acount-item/AccountItem'
 import AddAccountBtn from './add-account-btn/AddAccountBtn'
-import AccountFormModal from './account-form-modal/AccountFormModal'
+import AccountFormModal from './account-form/AccountFormModal'
 import './Account.scss'
 
 class Account extends Component {
