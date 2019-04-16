@@ -1,0 +1,20 @@
+.comp_month-select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100px;
+
+  .left-btn, .right-btn {
+    font-size: 22px;
+    cursor: pointer;
+    user-select: none;
+    
+    &:hover {
+      color: #95a5a6;
+    }
+    &:active {
+      color: #1abc9c;
+    }
+  }
+}
