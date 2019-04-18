@@ -3,7 +3,11 @@
   justify-content: space-between;
   align-items: center;
 
-  width: 100px;
+  min-width: 100px;
+
+  .date-text {
+    padding: 0 4px;
+  }
 
   .left-btn, .right-btn {
     font-size: 22px;

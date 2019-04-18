@@ -21,8 +21,8 @@ class AccountFlowInfo extends Component {
     monthOutlay: 0
   }
 
-  onDateChange = ({ year, month }) => {
-    console.log(year,month)
+  onDateChange = (changeDateObj) => {
+    console.log(changeDateObj)
   }
 
   render() {
@@ -34,7 +34,7 @@ class AccountFlowInfo extends Component {
         <span className="account-month-input">本月收入 { formatPrecision(monthInput, 2)}</span>
         <span className="account-month-outlay">本月支出 { formatPrecision(monthOutlay, 2)}</span>
         <span className="month-select"> 
-          <DateSelect onDateChange={ this.onDateChange }></DateSelect>
+          <DateSelect type="year" onChange={ this.onDateChange }></DateSelect>
         </span>
       </div>
     )
