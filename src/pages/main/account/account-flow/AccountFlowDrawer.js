@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Drawer } from 'antd'
 
 import AccountInfo from './AccountFlowInfo'
+import FlowItem from './AccountFlowItem'
 
 import './AccountFlow.scss'
 
@@ -17,6 +18,10 @@ class AccountFlowDrawer extends Component {
     onCloseFlowDrawer: PropTypes.func
   }
 
+  state={
+    flowWidth: '30%'
+  }
+
   render() {
     const { showFlowDrawer, onCloseFlowDrawer, account } = this.props
 
@@ -25,9 +30,10 @@ class AccountFlowDrawer extends Component {
         visible={ showFlowDrawer }
         onClose={ onCloseFlowDrawer }
         closable={ false }
-        width='50%'
+        width={ this.state.flowWidth }
       >
         <AccountInfo account={ account }></AccountInfo>
+        <FlowItem type='day' flowItemRemark='日常' flowItemMoney={ 2000 }></FlowItem>
       </Drawer>
     )
   }

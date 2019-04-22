@@ -40,8 +40,8 @@ class Account extends Component {
   }
 
   componentDidMount() {
-    const mainContainer = document.querySelector('.main-container')
-    const addBtnContainer = document.querySelector('.add-account-btn-container')
+    const mainContainer = document.querySelector('.account-main-container')
+    const addBtnContainer = document.querySelector('.account-add-btn-container')
     document.addEventListener('scroll', () => {
       const overflow = mainContainer.getBoundingClientRect().top
       addBtnContainer.style.bottom = overflow - 39 + 'px'
@@ -57,12 +57,13 @@ class Account extends Component {
   render() {
     const { accounts, showAddAccountModal } = this.state
     return (
-      <div className="main-container">
+      <div className="account-main-container">
         <BasicSummary 
           totalAssets={ this.state.totalAssets }
           currentMonthIncome={ this.state.currentMonthIncome }
           currentMonthOutlay={ this.state.currentMonthOutlay }
         ></BasicSummary>
+
         <div>
           {
             accounts.map(account => (
@@ -70,9 +71,11 @@ class Account extends Component {
             ))
           }
         </div>
-        <div className="add-account-btn-container">
+
+        <div className="account-add-btn-container">
           <AddAccountBtn onClick={ this.handleAddModalStatus(true) }></AddAccountBtn>
         </div>
+
         <AccountFormModal 
           showFormModal={ showAddAccountModal }
           onCloseFormModal={ this.handleAddModalStatus(false) }
