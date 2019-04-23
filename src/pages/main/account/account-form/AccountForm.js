@@ -31,28 +31,28 @@ class AccountForm extends Component {
           <Input 
             value={ name }
             onChange={ onChangeInput.bind(this, 'name')}
-          ></Input>
+          />
         </Form.Item>
 
         <Form.Item label="类别">
           <Input 
             value={ cate }
             onChange={ onChangeInput.bind(this, 'cate')}
-          ></Input>
+          />
         </Form.Item>
 
         <Form.Item label="金额">
           <InputNumber 
             value={ balance }
             onChange={ onChangeInput.bind(this, 'balance')}
-          ></InputNumber>
+          />
         </Form.Item>
 
         <Form.Item label="备注">
           <Input 
             value={ remark }
             onChange={ onChangeInput.bind(this, 'remark')}
-          ></Input>
+          />
         </Form.Item>
       </Form>
     )

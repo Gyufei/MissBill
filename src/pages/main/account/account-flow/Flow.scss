@@ -1,12 +1,21 @@
+$account-flow-info-height: 180px;
+
+/*reset antd*/
+.ant-drawer-body {
+  padding: 0;
+}
+
 .account-flow-info {
-  hieght: 200px;
-  margin-bottom: 10px;
+  height: $account-flow-info-height;
+  padding: 24px 24px 0px 24px;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1.5fr 1fr 1fr;
   justify-items: center;
   align-items: center;
+
+  border-bottom: 1px solid #95a5a6;
 
   img {
     grid-column: 2/3;
@@ -23,13 +32,19 @@
   .account-month-input {
     grid-column: 1/2;
     grid-row: 2/3;
+    justify-self: center;
     align-self: end;
+
+    text-align: center;
   }
 
   .account-month-outlay {
     grid-column: 3/4;
     grid-row: 2/3;
+    justify-self: center;
     align-self: end;
+
+    text-align: center;
   }
 
   .month-select {
@@ -39,10 +54,23 @@
   }
 }
 
+.account-flow-desc {
+  height: calc(100vh - #{$account-flow-info-height});
+  overflow: scroll;
+
+  padding: 10px;
+}
+
+.account-flows-date {
+  font-size: 22px;
+  color: #2c3e50;
+}
+
 .account-flow-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 17px;
 
   height: 50px;
   padding: 10px;

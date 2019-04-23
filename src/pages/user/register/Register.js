@@ -14,7 +14,7 @@ class Register extends Component {
     return (
       <div className="main-container">
         <Title level={4}>注册</Title>
-        <RegisterForm onRegister={ this.handleRegister }></RegisterForm>
+        <RegisterForm onRegister={ this.handleRegister } />
       </div>
     )
   }

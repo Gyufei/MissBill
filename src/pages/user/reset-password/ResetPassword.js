@@ -22,7 +22,7 @@ class ResetPassword extends Component {
         <Title level={4}>设置新密码</Title>
         <ResetPasswordForm 
           onSubmit={ this.handleSubmitResetPassword }
-          email={ email }></ResetPasswordForm>
+          email={ email } />
       </div>
     )
   }

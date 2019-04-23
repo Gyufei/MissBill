@@ -55,7 +55,7 @@ class RegisterForm extends Component {
               rules: [{ required: true, message: '请填写用户名'}]
             })(
               <Input 
-                prefix={ <Icon type="user"></Icon> }
+                prefix={ <Icon type="user" /> }
                 placeholder="Username" />
             )
           }
@@ -69,7 +69,7 @@ class RegisterForm extends Component {
               ]
             })(
               <Input 
-                prefix={ <Icon type="mail"></Icon> }
+                prefix={ <Icon type="mail" /> }
                 placeholder="Email" />
             )
           }
@@ -84,7 +84,7 @@ class RegisterForm extends Component {
               ]
             })(
               <Input.Password
-                prefix={ <Icon type="lock"></Icon> }
+                prefix={ <Icon type="lock" /> }
                 visibilityToggle={ false }
                 placeholder="Password"/>
             )
@@ -99,7 +99,7 @@ class RegisterForm extends Component {
               ]
             })(
               <Input.Password
-                prefix={ <Icon type="lock"></Icon> }
+                prefix={ <Icon type="lock" /> }
                 visibilityToggle={ false }
                 placeholder="Confirm Password"/>
             )

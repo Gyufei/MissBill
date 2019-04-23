@@ -18,7 +18,7 @@ class Login extends Component {
         <Title level={4}>登录</Title>
         <LoginForm
           onLogin={ this.handleLogin }
-        ></LoginForm>
+        />
       </div>
     )
   }

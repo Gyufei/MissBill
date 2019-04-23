@@ -54,7 +54,7 @@ class ResetPasswordForm extends Component {
           <Input
             disabled
             defaultValue={ this.props.email }
-            prefix={ <Icon type="mail"></Icon> }
+            prefix={ <Icon type="mail" /> }
           />
         </Form.Item>
         <Form.Item label="新密码">
@@ -67,7 +67,7 @@ class ResetPasswordForm extends Component {
             })( 
               <Input.Password
                 visibilityToggle={ false }
-                prefix={ <Icon type="lock"></Icon> }
+                prefix={ <Icon type="lock" /> }
               />
             )
           }
@@ -82,7 +82,7 @@ class ResetPasswordForm extends Component {
             })( 
               <Input.Password
                 visibilityToggle={ false }
-                prefix={ <Icon type="lock"></Icon> }
+                prefix={ <Icon type="lock" /> }
               />
             )
           }

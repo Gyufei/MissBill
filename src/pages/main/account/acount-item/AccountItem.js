@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import AccountFormModal from '../account-form/AccountFormModal'
-import AccountFlowDrawer from '../account-flow/AccountFlowDrawer'
+import FormModal from '../account-form/FormModal'
+import FlowDrawer from '../account-flow/FlowDrawer'
 import { Button } from 'antd'
 import { formatPrecision } from '@/utils/utils'
 
@@ -78,17 +78,15 @@ class AccountItem extends Component {
           <Button size="small">转账</Button>
         </div>
 
-        <AccountFormModal 
+        <FormModal 
           onCloseFormModal={ this.handleEditModalStatus(false) }
           showFormModal={ showFormModal }
-          account={ this.props.account }>
-        </AccountFormModal>
+          account={ this.props.account } />
 
-        <AccountFlowDrawer
+        <FlowDrawer
           onCloseFlowDrawer={ this.handleFlowDrawerStatus(false) }
           showFlowDrawer={ showFlowDrawer }
-          account={ this.props.account }>
-        </AccountFlowDrawer>
+          account={ this.props.account } />
       </div>
     )
   }

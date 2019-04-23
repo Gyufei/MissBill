@@ -36,7 +36,7 @@ class LoginForm extends Component {
             })(
               <Input 
                 prefix={
-                  <Icon type="user"></Icon>
+                  <Icon type="user" />
                 }
                 placeholder="Username" />
             )
@@ -49,7 +49,7 @@ class LoginForm extends Component {
             })(
               <Input.Password
                 prefix={
-                  <Icon type="lock"></Icon>
+                  <Icon type="lock" />
                 }
                 placeholder="Password"/>
             )
@@ -61,7 +61,7 @@ class LoginForm extends Component {
             getFieldDecorator('remeber', {
               initialValue: true
             })(
-              <Checkbox></Checkbox>
+              <Checkbox />
             )
           }
           <span>在这台电脑记住我</span>

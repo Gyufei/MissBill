@@ -34,7 +34,7 @@ class AccountFlowInfo extends Component {
         <span className="account-month-input">本月收入 { formatPrecision(monthInput, 2)}</span>
         <span className="account-month-outlay">本月支出 { formatPrecision(monthOutlay, 2)}</span>
         <span className="month-select"> 
-          <DateSelect type="year" onChange={ this.onDateChange }></DateSelect>
+          <DateSelect type="year" onChange={ this.onDateChange } />
         </span>
       </div>
     )

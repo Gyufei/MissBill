@@ -11,10 +11,10 @@ class User extends Component {
   render() {
     return (
       <Switch>
-        <Route path='/login' component={ Login }></Route>
-        <Route path='/register' component={ Register }></Route>
-        <Route path='/forget-password' component={ ForgetPassword }></Route>
-        <Route path='/reset-password' component={ ResetPassword }></Route>
+        <Route path='/login' component={ Login } />
+        <Route path='/register' component={ Register } />
+        <Route path='/forget-password' component={ ForgetPassword } />
+        <Route path='/reset-password' component={ ResetPassword } />
       </Switch>
     )
   }

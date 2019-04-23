@@ -11,10 +11,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <HeaderBar></HeaderBar>
-          <User></User>
-          <Main></Main>
-          <Route path="/"></Route>
+          <HeaderBar />
+          <User />
+          <Main />
+          <Route path="/" />
         </div>
       </Router>
     )

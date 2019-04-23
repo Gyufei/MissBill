@@ -56,7 +56,7 @@ class ForgetPassword extends Component {
           email={ email }
           changeEmail={ this.changeEmail }
           changeIsCanSubmit={ this.changeIsCanSubmit }
-        ></EmailInput>
+        />
         <Button 
           className="submit-email-btn" 
           loading={ isSubmitting }

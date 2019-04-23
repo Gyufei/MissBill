@@ -155,7 +155,7 @@ function WrapSelectHOC(Comp) {
         dateFns={ this.getDateFn(type) } 
         getDateFormatPattern = { this.getDateFormatPattern }
         getChangePayload = { this.getChangePayload }
-        {...extraProps}></Comp>
+        {...extraProps} />
     }
   }
 

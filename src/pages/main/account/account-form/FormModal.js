@@ -60,7 +60,7 @@ class AccountModal extends Component {
         <AccountForm
           account={ account }
           onChangeInput={ this.handleInputChange.bind(this) }
-        ></AccountForm>
+        />
       </Modal>
     )
   }

@@ -39,17 +39,17 @@ class BasicSummary extends Component {
         <SummaryItem 
           title="总资产" 
           value={  totalAssets }
-        ></SummaryItem>
+        />
 
         <SummaryItem 
           title="本月收入" 
           value={ currentMonthIncome }
-        ></SummaryItem>
+        />
 
         <SummaryItem 
           title="本月支出" 
           value={ currentMonthOutlay }
-        ></SummaryItem>
+        />
       </div>
     )
   }

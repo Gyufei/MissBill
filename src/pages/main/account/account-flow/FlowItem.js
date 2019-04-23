@@ -10,12 +10,6 @@ class FlowItem extends Component {
     money: PropTypes.number
   }
 
-
-  formatMoney (val, num) {
-    const formatedVal = formatPrecision(val, num)
-    return val > 0 ? `+${formatedVal}`: `-${formatedVal}`
-  } 
-
   render() {
     const { icon, name, remark, money } = this.props
     return (
@@ -29,7 +23,7 @@ class FlowItem extends Component {
         </span>
 
         <span className="item-money">
-          { this.formatMoney(money, 2) }
+          { formatPrecision(money, 2) }
         </span>
       </div>
     )
@@ -40,8 +34,8 @@ function FlowItemHOC (Comp) {
   class WrapFlowItem extends Component {
     static propTypes = {
       type: PropTypes.string,
-      flowItemRemark: PropTypes.string,
-      flowItemMoney: PropTypes.number
+      remark: PropTypes.string,
+      money: PropTypes.number
     }
 
     getImgAndNameByType(type) {
@@ -53,14 +47,14 @@ function FlowItemHOC (Comp) {
     }
 
     render() {
-      const { type, flowItemRemark, flowItemMoney } = this.props
+      const { type, remark, money } = this.props
       const { icon, name } = this.getImgAndNameByType(type)
       return (<Comp 
         icon={icon}
         name={name}
-        remark={ flowItemRemark }
-        money={ flowItemMoney }
-      ></Comp>)
+        remark={ remark }
+        money={ money }
+      />)
     }
   }
 

@@ -6,7 +6,7 @@ class Main extends Component {
   render() {
     return (
       <Switch>
-        <Route path='/account' component={ Account }></Route>
+        <Route path='/account' component={ Account } />
       </Switch>
     )
   }

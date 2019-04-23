@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BasicSummary from './basic-summary/BasicSummary'
 import AccountItem from './acount-item/AccountItem'
 import AddAccountBtn from './add-account-btn/AddAccountBtn'
-import AccountFormModal from './account-form/AccountFormModal'
+import FormModal from './account-form/FormModal'
 import './Account.scss'
 
 class Account extends Component {
@@ -62,24 +62,24 @@ class Account extends Component {
           totalAssets={ this.state.totalAssets }
           currentMonthIncome={ this.state.currentMonthIncome }
           currentMonthOutlay={ this.state.currentMonthOutlay }
-        ></BasicSummary>
+        />
 
         <div>
           {
             accounts.map(account => (
-              <AccountItem account={ account } key={ account.id }></AccountItem>
+              <AccountItem account={ account } key={ account.id } />
             ))
           }
         </div>
 
         <div className="account-add-btn-container">
-          <AddAccountBtn onClick={ this.handleAddModalStatus(true) }></AddAccountBtn>
+          <AddAccountBtn onClick={ this.handleAddModalStatus(true) } />
         </div>
 
-        <AccountFormModal 
+        <FormModal 
           showFormModal={ showAddAccountModal }
           onCloseFormModal={ this.handleAddModalStatus(false) }
-        ></AccountFormModal>
+        />
       </div>
     )
   }
