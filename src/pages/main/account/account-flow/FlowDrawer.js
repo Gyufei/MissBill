@@ -4,9 +4,9 @@ import { Drawer } from 'antd'
 
 import FlowInfo from './FlowInfo'
 import FlowDayItem from './FlowDayItem'
-
 import './Flow.scss'
-import FlowItem from './FlowItem'
+
+import { getAccountInfo } from '@/api/account'
 
 class AccountFlowDrawer extends Component {
   static propTypes = {
@@ -19,44 +19,34 @@ class AccountFlowDrawer extends Component {
     onCloseFlowDrawer: PropTypes.func
   }
 
+  UNSAFE_componentWillMount() {
+    const params = {
+      type: 'month',
+      date: new Date
+    }
+    this.getAccountInfo(params)
+  }
+
+  getAccountInfo(params) {
+    const id = this.props.account.id
+    getAccountInfo(id, params).then(res => {
+      this.setState({
+        monthInput: res.data.data.input,
+        monthOutlay: res.data.data.outlay,
+        daliyFlows: res.data.data.flows
+      })
+    })
+  } 
+
   state={
     flowWidth: '30%',
-    daliyFlows: [
-      { date: '19-05-22',
-        flows: [
-          { type: 'daliy', remark: '', money: 2000 },
-          { type: 'food', remark: '吃饭', money: -500 }
-        ]
-      },
-      { date: '19-05-23',
-        flows: [
-          { type: 'daliy', remark: '', money: 2000 },
-          { type: 'food', remark: '吃饭', money: -500 }
-        ]
-      },
-      { date: '19-05-24',
-        flows: [
-          { type: 'daliy', remark: '', money: 2000 },
-          { type: 'food', remark: '吃饭', money: -500 }
-        ]
-      },
-      { date: '19-05-25',
-        flows: [
-          { type: 'daliy', remark: '', money: 2000 },
-          { type: 'food', remark: '吃饭', money: -500 }
-        ]
-      },
-      { date: '19-05-26',
-        flows: [
-          { type: 'daliy', remark: '', money: 2000 },
-          { type: 'food', remark: '吃饭', money: -500 }
-        ]
-      }
-    ]
+    monthInput: 0,
+    monthOutlay: 0,
+    daliyFlows: []
   }
 
   render() {
-    const { daliyFlows } = this.state
+    const { daliyFlows, monthInput, monthOutlay } = this.state
     const { showFlowDrawer, onCloseFlowDrawer, account } = this.props
 
     return (
@@ -65,7 +55,8 @@ class AccountFlowDrawer extends Component {
         onClose={ onCloseFlowDrawer }
         closable={ false }
         width={ this.state.flowWidth }>
-        <FlowInfo account={ account } />
+
+        <FlowInfo account={ account } monthInput={ monthInput } monthOutlay={ monthOutlay } />
 
         <div className="account-flow-desc">
           {

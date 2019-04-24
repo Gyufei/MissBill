@@ -26,9 +26,7 @@ class DateSelect extends Component {
   constructor(props) {
     super(props)
     const dateState = props.initDate
-    this.state = {
-      dateState
-    }
+    this.state = { dateState }
   }
 
   static propTypes = {

@@ -4,7 +4,7 @@ import { formatPrecision } from '@/utils/utils'
 
 import DateSelect from '@/components/date-select/DateSelect'
 
-import cashImg from '@/assets/img/cash.jpeg'
+import xianjinImg from '@/assets/img/account/xianjin.png'
 
 class AccountFlowInfo extends Component {
   static propTypes = {
@@ -16,11 +16,6 @@ class AccountFlowInfo extends Component {
     monthOutlay: PropTypes.number
   }
 
-  static defaultProps = {
-    monthInput: 0,
-    monthOutlay: 0
-  }
-
   onDateChange = (changeDateObj) => {
     console.log(changeDateObj)
   }
@@ -29,12 +24,12 @@ class AccountFlowInfo extends Component {
     const { monthInput, monthOutlay, account: { name }} = this.props
     return (
       <div className="account-flow-info">
-        <img alt="account" src={ cashImg }></img>
+        <img alt="account" src={ xianjinImg }></img>
         <span className="account-name">{ name }</span>
         <span className="account-month-input">本月收入 { formatPrecision(monthInput, 2)}</span>
         <span className="account-month-outlay">本月支出 { formatPrecision(monthOutlay, 2)}</span>
         <span className="month-select"> 
-          <DateSelect type="year" onChange={ this.onDateChange } />
+          <DateSelect type="month" onChange={ this.onDateChange } />
         </span>
       </div>
     )

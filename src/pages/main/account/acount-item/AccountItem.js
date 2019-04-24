@@ -7,7 +7,7 @@ import { formatPrecision } from '@/utils/utils'
 
 
 import './AccountItem.scss'
-import cashImg from '@/assets/img/cash.jpeg'
+import xianjinImg from '@/assets/img/account/xianjin.png'
 
 class AccountItem extends Component {
   static propTypes = {
@@ -47,7 +47,7 @@ class AccountItem extends Component {
     return (
       <div className="account-item">
         <div className="account-cate">
-          <img src={ cashImg } alt="cash" />
+          <img src={ xianjinImg } alt="cash" />
           <span>{ cate }</span>
         </div>
 
