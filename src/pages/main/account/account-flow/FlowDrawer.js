@@ -19,7 +19,7 @@ class AccountFlowDrawer extends Component {
     onCloseFlowDrawer: PropTypes.func
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     const params = {
       type: 'month',
       date: new Date

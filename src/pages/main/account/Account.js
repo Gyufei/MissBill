@@ -18,7 +18,16 @@ class Account extends Component {
     accounts: []
   }
 
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
+    this.addScrollListener()
+    this.getAccounts()
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll')
+  }
+
+  getAccounts() {
     getAccounts().then(res => {
       this.setState({
         accounts: res.data.data.accounts
@@ -26,8 +35,8 @@ class Account extends Component {
     })
   }
 
-  componentDidMount() {
-    const mainContainer = document.querySelector('.account-main-container')
+  addScrollListener() {
+    const mainContainer = document.querySelector('.main-container')
     const addBtnContainer = document.querySelector('.account-add-btn-container')
     document.addEventListener('scroll', () => {
       const overflow = mainContainer.getBoundingClientRect().top
