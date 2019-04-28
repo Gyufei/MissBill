@@ -13,11 +13,8 @@ class AccountFlowInfo extends Component {
       name: PropTypes.string.isRequired,
     }).isRequired,
     monthInput: PropTypes.number,
-    monthOutlay: PropTypes.number
-  }
-
-  onDateChange = (changeDateObj) => {
-    console.log(changeDateObj)
+    monthOutlay: PropTypes.number,
+    onDateChange: PropTypes.func
   }
 
   render() {
@@ -29,7 +26,7 @@ class AccountFlowInfo extends Component {
         <span className="account-month-input">本月收入 { formatPrecision(monthInput, 2)}</span>
         <span className="account-month-outlay">本月支出 { formatPrecision(monthOutlay, 2)}</span>
         <span className="month-select"> 
-          <DateSelect type="month" onChange={ this.onDateChange } />
+          <DateSelect type="month" onChange={ this.props.onDateChange } />
         </span>
       </div>
     )

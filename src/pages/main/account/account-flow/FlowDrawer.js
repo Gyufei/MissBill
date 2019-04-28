@@ -27,6 +27,15 @@ class AccountFlowDrawer extends Component {
     this.getAccountInfo(params)
   }
 
+  handleDateChange({ year, month }) {
+    const date = new Date(`${year}-${month}`)
+    const params = {
+      type: 'month',
+      date
+    }
+    this.getAccountInfo(params)
+  }
+
   getAccountInfo(params) {
     const id = this.props.account.id
     getAccountInfo(id, params).then(res => {
@@ -56,7 +65,10 @@ class AccountFlowDrawer extends Component {
         closable={ false }
         width={ this.state.flowWidth }>
 
-        <FlowInfo account={ account } monthInput={ monthInput } monthOutlay={ monthOutlay } />
+        <FlowInfo onDateChange={ this.handleDateChange.bind(this) } 
+          account={ account } 
+          monthInput={ monthInput } 
+          monthOutlay={ monthOutlay } />
 
         <div className="account-flow-desc">
           {

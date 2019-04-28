@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import FormModal from '../account-form/FormModal'
 import FlowDrawer from '../account-flow/FlowDrawer'
+import TransferBtn from '../transfer-btn/TransferBtn'
 import { Button } from 'antd'
 import { formatPrecision } from '@/utils/utils'
 
@@ -75,7 +76,7 @@ class AccountItem extends Component {
 
         <div className="account-operator">
           <Button onClick={ this.handleFlowDrawerStatus(true) } size="small">流水</Button>
-          <Button size="small">转账</Button>
+          <TransferBtn />
         </div>
 
         <FormModal 

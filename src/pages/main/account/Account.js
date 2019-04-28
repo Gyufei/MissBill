@@ -24,7 +24,7 @@ class Account extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('scroll')
+    document.removeEventListener('scroll', this.scrollListener())
   }
 
   getAccounts() {
@@ -35,13 +35,20 @@ class Account extends Component {
     })
   }
 
-  addScrollListener() {
+  scrollListener () {
     const mainContainer = document.querySelector('.main-container')
     const addBtnContainer = document.querySelector('.account-add-btn-container')
-    document.addEventListener('scroll', () => {
+
+    const scrollFunc = () => {
       const overflow = mainContainer.getBoundingClientRect().top
-      addBtnContainer.style.bottom = overflow - 39 + 'px'
-    })
+      addBtnContainer.style.bottom = overflow + 30 + 'px'
+    }
+
+    return scrollFunc
+  }
+
+  addScrollListener() {
+    document.addEventListener('scroll', this.scrollListener())
   }
 
   handleAddModalStatus = (isShow) => () => {
